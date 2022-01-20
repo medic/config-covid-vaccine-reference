@@ -1,0 +1,10 @@
+.hashes
+._revs
+node_modules
+gdrive.secrets.json
+backups/**/*
+**/.~lock.*
+upload-docs.*.json
+local.json
+json_docs
+.snapshots/*

@@ -1,0 +1,8 @@
+{
+    "icon": "icon-healthcare-immunization",
+    "title": "Covid Vaccine Follow Up",
+    "context": {
+        "person": false,
+        "place": false
+    }
+}

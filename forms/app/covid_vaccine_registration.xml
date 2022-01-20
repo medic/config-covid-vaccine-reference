@@ -1,0 +1,876 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms">
+  <h:head>
+    <h:title>Covid Vaccine Registration</h:title>
+    <model>
+      <itext>
+        <translation lang="en">
+          <text id="/covid_vaccine_registration/group_review/r_follow_up_task_list:label">
+            <value>Please ensure the patient completes eligible vaccine doses</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_follow_up_tasks:label">
+            <value>Follow Up Tasks</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_fully_vaccinated:label">
+            <value>Fully vaccinated</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_missed_appointment:label">
+            <value>Has a missed appointment</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_patient_details:label">
+            <value>&lt;h4 style=&quot;text-align:center;&quot;&gt;<output value=" /covid_vaccine_registration/patient_name "/>&lt;/h4&gt; 
+&lt;h5 style=&quot;text-align:center;&quot;&gt;<output value=" /covid_vaccine_registration/patient_age_in_years "/> years old&lt;/h5&gt;</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_report:label">
+            <value>**Vaccination Registration Report**</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_summary_details:label">
+            <value>Patient Details&lt;I class="fa fa-user"&gt;&lt;/i&gt;</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_upcoming_appointment:label">
+            <value>Has an upcoming appointment</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/r_vaccination_status:label">
+            <value>Vaccination Status</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review/submit:label">
+            <value>&lt;h4 style="text-align:center;"&gt;Click the Submit button at the bottom of the form.&lt;/h4&gt;</value>
+          </text>
+          <text id="/covid_vaccine_registration/group_review:label">
+            <value>Results/Summary Page</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/_id:label">
+            <value>What is the patient's name?</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/date_of_birth:label">
+            <value>Date of Birth</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/name:label">
+            <value>Name</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/parent/parent/contact/name:label">
+            <value>CHW name</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/parent/parent/contact/phone:label">
+            <value>CHW phone</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/parent/parent/contact:label">
+            <value>Contact</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/parent/parent:label">
+            <value>Parent</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/parent:label">
+            <value>Parent</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/patient_id:label">
+            <value>Patient ID</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact/sex:label">
+            <value>Sex</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/contact:label">
+            <value>Contact</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/source:label">
+            <value>Source</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs/source_id:label">
+            <value>Source ID</value>
+          </text>
+          <text id="/covid_vaccine_registration/inputs:label">
+            <value>Patient</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination:label">
+            <value>Would you like to complete your vaccination?</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/dose_completion_other:label">
+            <value>Specify other</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/get_vaccine/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/get_vaccine/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/get_vaccine:label">
+            <value>Would you like to be vaccinated?</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion:label">
+            <value>Kindly advise the patient to continue protecting themselves and others by wearing masks, social distancing and washing hands.</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage:label">
+            <value>Encourage the patient to go to the health facility for vaccination follow up</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1:label">
+            <value>The benefits of COVID-19 vaccines outweigh the side effects.Many people have reported side effects that may affect their ability to do daily activities, but they should go away within a few days.</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2:label">
+            <value>COVID 19-vaccines are effective and can reduce the risk of getting and spreading the virus that causes COVID-19</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3:label">
+            <value>Kindly educate the patient on the importance of COVID 19 vaccines and encourage them to go to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_reach_out:label">
+            <value>Please reach out to me if you change your mind and continue following up all the laid down COVID protocols.</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/n_refer:label">
+            <value>Please refer the patient to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:jr:constraintMsg">
+            <value>Date cannot be in the past or more than 14 days from today!</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:label">
+            <value>Please indicate the date you would like to come back and follow up with the patient</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/next_follow_up:jr:constraintMsg">
+            <value>Date cannot be in the past!</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/next_follow_up:label">
+            <value>Please indicate the date you would like to come back and follow up with the patient</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_other:label">
+            <value>Specify other</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/health_facility_far:label">
+            <value>The health facility is too far</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/long_queue:label">
+            <value>The queue at the health facility is too long</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/no_transport:label">
+            <value>No transport</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/other:label">
+            <value>Other</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/severe_side_effects:label">
+            <value>Side effects from the earlier dose were severe</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/vaccine_not_effective:label">
+            <value>I do not think the vaccines are effective</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason:label">
+            <value>Kindly share why you do not wish to complete your vaccination</value>
+          </text>
+          <text id="/covid_vaccine_registration/missed_vaccine_details:label">
+            <value>Missed Vaccine Details</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type/astrazenca:label">
+            <value>Astrazenca</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type/janssen_vaccine:label">
+            <value>Janssen vaccine (Johnson and Johnson)</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type/moderna:label">
+            <value>Moderna</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type/pfizer_biontech:label">
+            <value>Pfizer-BioNtech</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type/sinopharm:label">
+            <value>Sinopharm BIBP</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/covid_vaccine_type:label">
+            <value>Please add the type of vaccine received, kindly reference the vaccination card or any other verifiable source if available.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/received_covid_vaccine/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/received_covid_vaccine/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details/received_covid_vaccine:label">
+            <value>Have you received COVID-19 vaccine?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/get_vaccine2/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/get_vaccine2/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/get_vaccine2:label">
+            <value>Would you like to be vaccinated?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding:label">
+            <value>Studies have shown that mothers pass immunity to their newborns through breast milk. This suggests those newborns have some immunity to the virus, which is especially important as young children cannot get the vaccine.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity:label">
+            <value>There is no evidence that COVID-19 vaccines cause fertility problems. The benefits of COVID-19 vaccination outweigh the known and potential risks.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective:label">
+            <value>COVID 19-vaccines are effective and can reduce the risk of getting and spreading the virus that causes COVID-19. Although each vaccine is unique, all of them offer strong protection against severe disease.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy:label">
+            <value>COVID 19 vaccines are safe for expectant mothers as they create immunity to the virus of the unborn baby</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out:label">
+            <value>Please reach out to me if you change your mind and continue following up all the laid down COVID protocols.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_refer:label">
+            <value>Please refer the patient to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects:label">
+            <value>Some people have no side effects from COVID-19 vaccines. Many people have reported side effects that may affect their ability to do daily activities, but they should go away within a few days.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick:label">
+            <value>None of the COVID-19 vaccines contain the live virus that causes COVID-19, so a COVID-19 vaccine cannot make you sick with COVID-19.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/affect_pregnancy:label">
+            <value>COVID 19 vaccines might affect my pregnancy</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/breast_feeding:label">
+            <value>COVID 19 vaccines are not safe for breastfeeding children</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/infertility:label">
+            <value>COVID 19 vaccines may cause infertility</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/not_effective:label">
+            <value>COVID 19 vaccines are not effective</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/other:label">
+            <value>Other</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/scared_to_get_covid19:label">
+            <value>I am scared of getting sick with COVID 19 out of vaccination</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/severe_side_effects:label">
+            <value>COVID19 vaccines cause severe side effects</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason:label">
+            <value>Kindly share why you do not wish to complete your vaccination</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other:label">
+            <value>Specify other</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/receive_vaccine/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/receive_vaccine/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/receive_vaccine:label">
+            <value>Would you like to receive COVID-19 vaccine?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:jr:constraintMsg">
+            <value>Date cannot be in the past!</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:label">
+            <value>Please indicate the date you would like to come back and follow up with the patient</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2:label">
+            <value>Vaccination Details</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details:label">
+            <value>Vaccination details</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/all_doses_taken/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/all_doses_taken/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/all_doses_taken:label">
+            <value>Has <output value=" /covid_vaccine_registration/patient_name "/> received eligible vaccine doses?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/appointment_date_known/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/appointment_date_known/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/appointment_date_known:label">
+            <value>Is the next appointment date available/known?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/missed_appointment:label">
+            <value>Missed appointment</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/other:label">
+            <value>Other</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/upcoming_appointment:label">
+            <value>Has an upcoming appointment</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/vaccine_unavailable:label">
+            <value>Unavailability of vaccines</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason:label">
+            <value>Why is the vaccination status of the <output value=" /covid_vaccine_registration/patient_name "/> not up to date?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/n_complete_vaccine:label">
+            <value>It is important to complete vaccination to reduce chances of getting infected.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/n_doses_complete:label">
+            <value>**Congratulations! Thank you for protecting yourself and your loved ones.**</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/n_upcoming_appointment:label">
+            <value>Kindly advise the patient to continue protecting themselves and others by wearing masks, social distancing and washing hands.</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/n_vaccination_followup:label">
+            <value>Encourage the patient to go to the health facility for vaccination follow up</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/n_vaccine_check:label">
+            <value>Kindly check back with the health facility within the next one week</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/next_visit:jr:constraintMsg">
+            <value>Date cannot be in the past!</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status/next_visit:label">
+            <value>When is the next appointment date?</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_status:label">
+            <value>Vaccination Status</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_benefits:label">
+            <value>COVID 19-vaccines can reduce the risk of getting and spreading the virus that causes COVID-19</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_importance:label">
+            <value>COVID-19 vaccination is an important tool to help stop the COVID-19 pandemic</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_safety:label">
+            <value>COVID-19 vaccines are safe and effective</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccine_benefits:label">
+            <value>Benefits of vaccines</value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <covid_vaccine_registration id="covid_vaccine_registration" prefix="J1!covid_vaccine_registration!" delimiter="#" version="2022-01-11 09:34:42">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <contact>
+              <_id/>
+              <name/>
+              <patient_id/>
+              <date_of_birth>0</date_of_birth>
+              <sex/>
+              <parent>
+                <parent>
+                  <contact>
+                    <name/>
+                    <phone/>
+                  </contact>
+                </parent>
+              </parent>
+            </contact>
+          </inputs>
+          <source/>
+          <source_id/>
+          <patient_uuid/>
+          <patient_id/>
+          <patient_name/>
+          <patient_date_of_birth/>
+          <patient_age_in_years>0</patient_age_in_years>
+          <patient_age_in_months>0</patient_age_in_months>
+          <patient_age_in_days/>
+          <patient_age_in_weeks/>
+          <patient_gender/>
+          <t_death_confirmation/>
+          <t_death_confirmation_date/>
+          <vaccine_benefits>
+            <n_covid_vaccine_importance/>
+            <n_covid_vaccine_safety/>
+            <n_covid_vaccine_benefits/>
+          </vaccine_benefits>
+          <vaccination_details>
+            <received_covid_vaccine/>
+            <covid_vaccine_type/>
+          </vaccination_details>
+          <vaccination_status>
+            <all_doses_taken/>
+            <n_doses_complete/>
+            <dose_incompletion_reason/>
+            <n_upcoming_appointment/>
+            <appointment_date_known/>
+            <next_visit/>
+            <n_vaccination_followup/>
+            <n_complete_vaccine/>
+            <n_vaccine_check/>
+          </vaccination_status>
+          <missed_vaccine_details>
+            <complete_vaccination/>
+            <non_completion_reason/>
+            <n_encourage_completion1/>
+            <n_encourage_completion2/>
+            <n_encourage_completion3/>
+            <non_completion_other/>
+            <get_vaccine/>
+            <n_reach_out/>
+            <n_refer/>
+            <next_follow_up/>
+            <next__vacchine_follow_up/>
+            <dose_completion_other/>
+            <n_dose_completion/>
+            <n_dose_completion_encourage/>
+          </missed_vaccine_details>
+          <vaccination_details2>
+            <receive_vaccine/>
+            <non_vaccination_reason/>
+            <n_vaccine_wont_make_you_sick/>
+            <n_vaccine_infertitlity/>
+            <n_vaccine_side_effects/>
+            <n_vaccine_pregnancy/>
+            <n_vaccine_breastfeeding/>
+            <n_vaccine_not_effective/>
+            <non_vaccination_reason_other/>
+            <n_vaccine_refer/>
+            <vaccine_follow_up/>
+            <get_vaccine2/>
+            <n_vaccine_reach_out/>
+          </vaccination_details2>
+          <group_review>
+            <r_report/>
+            <submit/>
+            <r_summary_details/>
+            <r_patient_details/>
+            <r_vaccination_status/>
+            <r_fully_vaccinated/>
+            <r_upcoming_appointment/>
+            <r_missed_appointment/>
+            <r_follow_up_tasks/>
+            <r_follow_up_task_list/>
+          </group_review>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </covid_vaccine_registration>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/covid_vaccine_registration/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/source" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/source_id" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/name" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/patient_id" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/date_of_birth" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/sex" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/parent/parent/contact/name" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/inputs/contact/parent/parent/contact/phone" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/source" type="string" calculate="../inputs/source"/>
+      <bind nodeset="/covid_vaccine_registration/source_id" type="string" calculate="../inputs/source_id"/>
+      <bind nodeset="/covid_vaccine_registration/patient_uuid" type="string" calculate="../inputs/contact/_id"/>
+      <bind nodeset="/covid_vaccine_registration/patient_id" type="string" calculate="../inputs/contact/_id" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/patient_name" type="string" calculate="../inputs/contact/name"/>
+      <bind nodeset="/covid_vaccine_registration/patient_date_of_birth" type="string" calculate="../inputs/contact/date_of_birth"/>
+      <bind nodeset="/covid_vaccine_registration/patient_age_in_years" type="string" calculate="floor( difference-in-months(  /covid_vaccine_registration/inputs/contact/date_of_birth , today() ) div 12 )"/>
+      <bind nodeset="/covid_vaccine_registration/patient_age_in_months" type="string" calculate="difference-in-months(  /covid_vaccine_registration/inputs/contact/date_of_birth , today() )"/>
+      <bind nodeset="/covid_vaccine_registration/patient_age_in_days" type="string" calculate="floor( decimal-date-time(today()) - decimal-date-time( /covid_vaccine_registration/inputs/contact/date_of_birth ) )"/>
+      <bind nodeset="/covid_vaccine_registration/patient_age_in_weeks" type="string" calculate="floor((decimal-date-time(today()) - decimal-date-time( /covid_vaccine_registration/inputs/contact/date_of_birth )) div 7)"/>
+      <bind nodeset="/covid_vaccine_registration/patient_gender" type="string" calculate="../inputs/contact/sex"/>
+      <bind nodeset="/covid_vaccine_registration/t_death_confirmation" type="string" calculate="if(selected(../referral_completion/condition, 'dead'), 
+'yes', 'no')"/>
+      <bind nodeset="/covid_vaccine_registration/t_death_confirmation_date" type="string" calculate="today()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_importance" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_safety" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_benefits" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details/received_covid_vaccine" type="select1" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details/covid_vaccine_type" type="select1" relevant="selected(../received_covid_vaccine, 'yes')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/all_doses_taken" type="select1" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_doses_complete" readonly="true()" type="string" relevant="selected(../all_doses_taken, 'yes')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason" type="select1" relevant="selected(../all_doses_taken, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_upcoming_appointment" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/appointment_date_known" type="select1" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/next_visit" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'yes'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_status/next_visit:jr:constraintMsg')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccination_followup" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'no'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_complete_vaccine" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'missed_appointment')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccine_check" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'vaccine_unavailable')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination" type="select1" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'missed_appointment'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason" type="select" relevant="selected(../complete_vaccination, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'severe_side_effects')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'vaccine_not_effective')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_other" type="string" relevant="selected(../non_completion_reason, 'other')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/get_vaccine" type="select1" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue') or selected(../non_completion_reason, 'vaccine_not_effective') or selected(../non_completion_reason, 'severe_side_effects') or selected(../non_completion_reason, 'other')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_reach_out" readonly="true()" type="string" relevant="selected(../get_vaccine, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_refer" readonly="true()" type="string" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next_follow_up:jr:constraintMsg')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 14" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'vaccine_unavailable'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:jr:constraintMsg')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/dose_completion_other" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'no'"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/receive_vaccine" type="select1" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'no'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason" type="select" relevant="selected(../receive_vaccine, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'infertility')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'severe_side_effects')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'affect_pregnancy')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'breast_feeding')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'not_effective')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other" type="string" relevant="selected(../non_vaccination_reason, 'other')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_refer" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:jr:constraintMsg')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/get_vaccine2" type="select1" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19') or 
+selected(../non_vaccination_reason, 'infertility') or 
+selected(../non_vaccination_reason, 'severe_side_effects') or 
+selected(../non_vaccination_reason, 'affect_pregnancy') or 
+selected(../non_vaccination_reason, 'breast_feeding') or 
+selected(../non_vaccination_reason, 'not_effective') or 
+selected(../non_vaccination_reason, 'other')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/get_vaccine2  = 'no'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_report" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/submit" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_summary_details" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_patient_details" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_vaccination_status" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_fully_vaccinated" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/all_doses_taken  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_upcoming_appointment" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'upcoming_appointment' or  /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_missed_appointment" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'missed_appointment'"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_follow_up_tasks" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes' or  /covid_vaccine_registration/missed_vaccine_details/get_vaccine  = 'yes' or  /covid_vaccine_registration/missed_vaccine_details/complete_vaccination  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/group_review/r_follow_up_task_list" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes' or  /covid_vaccine_registration/missed_vaccine_details/get_vaccine  = 'yes' or  /covid_vaccine_registration/missed_vaccine_details/complete_vaccination  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/covid_vaccine_registration/inputs">
+      <label ref="jr:itext('/covid_vaccine_registration/inputs:label')"/>
+      <group ref="/covid_vaccine_registration/inputs/contact">
+        <label ref="jr:itext('/covid_vaccine_registration/inputs/contact:label')"/>
+        <input appearance="db-object" ref="/covid_vaccine_registration/inputs/contact/_id">
+          <label ref="jr:itext('/covid_vaccine_registration/inputs/contact/_id:label')"/>
+        </input>
+        <group ref="/covid_vaccine_registration/inputs/contact/parent">
+          <label ref="jr:itext('/covid_vaccine_registration/inputs/contact/parent:label')"/>
+          <group ref="/covid_vaccine_registration/inputs/contact/parent/parent">
+            <label ref="jr:itext('/covid_vaccine_registration/inputs/contact/parent/parent:label')"/>
+            <group ref="/covid_vaccine_registration/inputs/contact/parent/parent/contact">
+              <label ref="jr:itext('/covid_vaccine_registration/inputs/contact/parent/parent/contact:label')"/>
+            </group>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_registration/vaccine_benefits">
+      <label ref="jr:itext('/covid_vaccine_registration/vaccine_benefits:label')"/>
+      <input ref="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_importance">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_importance:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_safety">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_safety:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_benefits">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_benefits:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_registration/vaccination_details">
+      <label ref="jr:itext('/covid_vaccine_registration/vaccination_details:label')"/>
+      <select1 ref="/covid_vaccine_registration/vaccination_details/received_covid_vaccine">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/received_covid_vaccine:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/received_covid_vaccine/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/received_covid_vaccine/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/covid_vaccine_registration/vaccination_details/covid_vaccine_type">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/astrazenca:label')"/>
+          <value>astrazenca</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/moderna:label')"/>
+          <value>moderna</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/pfizer_biontech:label')"/>
+          <value>pfizer_biontech</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/janssen_vaccine:label')"/>
+          <value>janssen_vaccine</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/sinopharm:label')"/>
+          <value>sinopharm</value>
+        </item>
+      </select1>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_registration/vaccination_status">
+      <label ref="jr:itext('/covid_vaccine_registration/vaccination_status:label')"/>
+      <select1 ref="/covid_vaccine_registration/vaccination_status/all_doses_taken">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/all_doses_taken:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/all_doses_taken/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/all_doses_taken/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_registration/vaccination_status/n_doses_complete">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/n_doses_complete:label')"/>
+      </input>
+      <select1 ref="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/dose_incompletion_reason:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/upcoming_appointment:label')"/>
+          <value>upcoming_appointment</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/missed_appointment:label')"/>
+          <value>missed_appointment</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/vaccine_unavailable:label')"/>
+          <value>vaccine_unavailable</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/dose_incompletion_reason/other:label')"/>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_registration/vaccination_status/n_upcoming_appointment">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/n_upcoming_appointment:label')"/>
+      </input>
+      <select1 ref="/covid_vaccine_registration/vaccination_status/appointment_date_known">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/appointment_date_known:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/appointment_date_known/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/appointment_date_known/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_registration/vaccination_status/next_visit">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/next_visit:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_status/n_vaccination_followup">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/n_vaccination_followup:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_status/n_complete_vaccine">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/n_complete_vaccine:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_status/n_vaccine_check">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_status/n_vaccine_check:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_registration/missed_vaccine_details">
+      <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details:label')"/>
+      <select1 ref="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/complete_vaccination:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/complete_vaccination/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/complete_vaccination/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <select ref="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/severe_side_effects:label')"/>
+          <value>severe_side_effects</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/vaccine_not_effective:label')"/>
+          <value>vaccine_not_effective</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/health_facility_far:label')"/>
+          <value>health_facility_far</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/no_transport:label')"/>
+          <value>no_transport</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/long_queue:label')"/>
+          <value>long_queue</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_reason/other:label')"/>
+          <value>other</value>
+        </item>
+      </select>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/non_completion_other">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/non_completion_other:label')"/>
+      </input>
+      <select1 ref="/covid_vaccine_registration/missed_vaccine_details/get_vaccine">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/get_vaccine:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/get_vaccine/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/get_vaccine/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_reach_out">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_reach_out:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_refer">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_refer:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/next_follow_up">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next_follow_up:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/dose_completion_other">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/dose_completion_other:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_dose_completion:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage">
+        <label ref="jr:itext('/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list summary" ref="/covid_vaccine_registration/vaccination_details2">
+      <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2:label')"/>
+      <select1 ref="/covid_vaccine_registration/vaccination_details2/receive_vaccine">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/receive_vaccine:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/receive_vaccine/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/receive_vaccine/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <select ref="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/scared_to_get_covid19:label')"/>
+          <value>scared_to_get_covid19</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/infertility:label')"/>
+          <value>infertility</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/severe_side_effects:label')"/>
+          <value>severe_side_effects</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/affect_pregnancy:label')"/>
+          <value>affect_pregnancy</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/breast_feeding:label')"/>
+          <value>breast_feeding</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/not_effective:label')"/>
+          <value>not_effective</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/other:label')"/>
+          <value>other</value>
+        </item>
+      </select>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_refer">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_refer:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:label')"/>
+      </input>
+      <select1 ref="/covid_vaccine_registration/vaccination_details2/get_vaccine2">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/get_vaccine2:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/get_vaccine2/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/get_vaccine2/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list summary" ref="/covid_vaccine_registration/group_review">
+      <label ref="jr:itext('/covid_vaccine_registration/group_review:label')"/>
+      <input appearance="h1 red" ref="/covid_vaccine_registration/group_review/r_report">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_report:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/submit">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/submit:label')"/>
+      </input>
+      <input appearance="h1 yellow" ref="/covid_vaccine_registration/group_review/r_summary_details">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_summary_details:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/r_patient_details">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_patient_details:label')"/>
+      </input>
+      <input appearance="h1 blue" ref="/covid_vaccine_registration/group_review/r_vaccination_status">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_vaccination_status:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/r_fully_vaccinated">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_fully_vaccinated:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/r_upcoming_appointment">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_upcoming_appointment:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/r_missed_appointment">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_missed_appointment:label')"/>
+      </input>
+      <input appearance="h1 blue" ref="/covid_vaccine_registration/group_review/r_follow_up_tasks">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_follow_up_tasks:label')"/>
+      </input>
+      <input ref="/covid_vaccine_registration/group_review/r_follow_up_task_list">
+        <label ref="jr:itext('/covid_vaccine_registration/group_review/r_follow_up_task_list:label')"/>
+      </input>
+    </group>
+  </h:body>
+</h:html>

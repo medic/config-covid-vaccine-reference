@@ -1,0 +1,491 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms">
+  <h:head>
+    <h:title>Covid Vaccine Referral Follow Up</h:title>
+    <model>
+      <itext>
+        <translation lang="en">
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_finding_not_visited:label">
+            <value>Patient did not go to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_finding_visited:label">
+            <value>Patient went to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_findings:label">
+            <value>Findings</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_patient_details:label">
+            <value>&lt;h4 style=&quot;text-align:center;&quot;&gt;<output value=" /covid_vaccine_referral_follow_up/patient_name "/>&lt;/h4&gt; 
+&lt;h5 style=&quot;text-align:center;&quot;&gt;<output value=" /covid_vaccine_referral_follow_up/patient_age_in_years "/> years old&lt;/h5&gt;</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_report:label">
+            <value>**Vaccination Referral Follow up Report**</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/r_summary_details:label">
+            <value>Patient Details&lt;I class="fa fa-user"&gt;&lt;/i&gt;</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review/submit:label">
+            <value>&lt;h4 style="text-align:center;"&gt;Click the Submit button at the bottom of the form.&lt;/h4&gt;</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/group_review:label">
+            <value>Results/Summary Page</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/_id:label">
+            <value>What is the patient's name?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/date_of_birth:label">
+            <value>Date of Birth</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/name:label">
+            <value>Name</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact/name:label">
+            <value>CHW name</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact/phone:label">
+            <value>CHW phone</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact:label">
+            <value>Contact</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent:label">
+            <value>Parent</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/parent:label">
+            <value>Parent</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/patient_id:label">
+            <value>Patient ID</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact/sex:label">
+            <value>Sex</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/contact:label">
+            <value>Contact</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/is_covid_vaccine_referral:label">
+            <value>Is covid vaccine follow up</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/source:label">
+            <value>Source</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs/source_id:label">
+            <value>Source ID</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/inputs:label">
+            <value>Patient</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known:label">
+            <value>Is the next appointment date available/known?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/astrazenca:label">
+            <value>Astrazenca</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/janssen_vaccine:label">
+            <value>Johnson and Johnson</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/moderna:label">
+            <value>Moderna</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/pfizer_biontech:label">
+            <value>Pfizer</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/sinopharm:label">
+            <value>Sinopharm BIBP</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type:label">
+            <value>Please add the type of vaccine received.</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion1:label">
+            <value>The benefits of COVID-19 vaccines outweigh the side effects.Many people have reported side effects that may affect their ability to do daily activities, but they should go away within a few days.</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion2:label">
+            <value>COVID 19-vaccines are effective and can reduce the risk of getting and spreading the virus that causes COVID-19</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion3:label">
+            <value>Kindly educate the patient on the importance of COVID 19 vaccines and encourage them to go to the health facility</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_encourage_vaccination:label">
+            <value>Counsel the patient on importance of COVID-19 vaccines and ask them to reach out to you when they accept to be vaccinated</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose:hint">
+            <value>For those who do not have proof, kindly probe further to gather the type of vaccine and vaccination date</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose:label">
+            <value>Kindly reference the vaccination card or any other verifiable source if available.</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/next_visit:jr:constraintMsg">
+            <value>Date cannot be in the past!</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/next_visit:label">
+            <value>When is the next appointment date?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_other:label">
+            <value>Specify other</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/health_facility_far:label">
+            <value>The health facility is too far</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/long_queue:label">
+            <value>The queue at the health facility is too long</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/no_transport:label">
+            <value>No transport</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/other:label">
+            <value>Other</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/severe_side_effects:label">
+            <value>Side effects from the earlier dose were severe</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/vaccine_not_effective:label">
+            <value>I do not think the vaccines are effective</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason:label">
+            <value>Why did <output value=" /covid_vaccine_referral_follow_up/patient_name "/> not go to the health facility?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose:label">
+            <value>Did <output value=" /covid_vaccine_referral_follow_up/patient_name "/> receive COVID-19 vaccine?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/visited_facility/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/visited_facility/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details/visited_facility:label">
+            <value>Did <output value=" /covid_vaccine_referral_follow_up/patient_name "/> go to the health facility as expected?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/referral_details:label">
+            <value>Referral details</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:jr:constraintMsg">
+            <value>Date cannot be in the past or more than 7 days from today!</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:label">
+            <value>Kindly indicate the date you would like to follow up on the patient</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details/patient_available/no:label">
+            <value>No</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details/patient_available/yes:label">
+            <value>Yes</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details/patient_available:label">
+            <value>Is the patient available for follow up?</value>
+          </text>
+          <text id="/covid_vaccine_referral_follow_up/vaccination_details:label">
+            <value>Vaccination details</value>
+          </text>
+        </translation>
+      </itext>
+      <instance>
+        <covid_vaccine_referral_follow_up id="covid_vaccine_referral_follow_up" prefix="J1!covid_vaccine_referral_follow_up!" delimiter="#" version="2022-01-06 06:58:40">
+          <inputs>
+            <meta>
+              <location>
+                <lat/>
+                <long/>
+                <error/>
+                <message/>
+              </location>
+            </meta>
+            <source>user</source>
+            <source_id/>
+            <is_covid_vaccine_referral/>
+            <contact>
+              <_id/>
+              <name/>
+              <patient_id/>
+              <date_of_birth>0</date_of_birth>
+              <sex/>
+              <parent>
+                <parent>
+                  <contact>
+                    <name/>
+                    <phone/>
+                  </contact>
+                </parent>
+              </parent>
+            </contact>
+          </inputs>
+          <source/>
+          <source_id/>
+          <is_covid_vaccine_referral/>
+          <patient_uuid/>
+          <patient_id/>
+          <patient_name/>
+          <patient_date_of_birth/>
+          <patient_age_in_years>0</patient_age_in_years>
+          <patient_age_in_months>0</patient_age_in_months>
+          <patient_age_in_days/>
+          <patient_age_in_weeks/>
+          <patient_gender/>
+          <t_death_confirmation/>
+          <t_death_confirmation_date/>
+          <vaccination_details>
+            <patient_available/>
+            <patient_availability_follow_up/>
+          </vaccination_details>
+          <referral_details>
+            <visited_facility/>
+            <vaccine_dose/>
+            <n_vaccine_dose/>
+            <covid_vaccine_type/>
+            <appointment_date_known/>
+            <next_visit/>
+            <no_visit_reason/>
+            <n_encourage_completion1/>
+            <n_encourage_completion2/>
+            <n_encourage_completion3/>
+            <no_visit_other/>
+            <n_encourage_vaccination/>
+          </referral_details>
+          <group_review>
+            <r_report/>
+            <submit/>
+            <r_summary_details/>
+            <r_patient_details/>
+            <r_findings/>
+            <r_finding_visited/>
+            <r_finding_not_visited/>
+          </group_review>
+          <meta tag="hidden">
+            <instanceID/>
+          </meta>
+        </covid_vaccine_referral_follow_up>
+      </instance>
+      <instance id="contact-summary"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs" relevant="./source = 'user'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/source" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/source_id" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/is_covid_vaccine_referral" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/_id" type="db:person"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/name" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/patient_id" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/date_of_birth" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/sex" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact/name" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact/phone" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/source" type="string" calculate="../inputs/source"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/source_id" type="string" calculate="../inputs/source_id"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/is_covid_vaccine_referral" type="string" calculate="../inputs/is_covid_vaccine_referral"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_uuid" type="string" calculate="../inputs/contact/_id"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_id" type="string" calculate="../inputs/contact/_id" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_name" type="string" calculate="../inputs/contact/name"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_date_of_birth" type="string" calculate="../inputs/contact/date_of_birth"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_age_in_years" type="string" calculate="floor( difference-in-months(  /covid_vaccine_referral_follow_up/inputs/contact/date_of_birth , today() ) div 12 )"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_age_in_months" type="string" calculate="difference-in-months(  /covid_vaccine_referral_follow_up/inputs/contact/date_of_birth , today() )"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_age_in_days" type="string" calculate="floor( decimal-date-time(today()) - decimal-date-time( /covid_vaccine_referral_follow_up/inputs/contact/date_of_birth ) )"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_age_in_weeks" type="string" calculate="floor((decimal-date-time(today()) - decimal-date-time( /covid_vaccine_referral_follow_up/inputs/contact/date_of_birth )) div 7)"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_gender" type="string" calculate="../inputs/contact/sex"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/t_death_confirmation" type="string" calculate="if(selected(../referral_completion/condition, 'dead'), 
+'yes', 'no')"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/t_death_confirmation_date" type="string" calculate="today()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/vaccination_details/patient_available" type="select1" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 7" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:jr:constraintMsg')" relevant="selected(../patient_available, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details" relevant=" /covid_vaccine_referral_follow_up/vaccination_details/patient_available  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/visited_facility" type="select1" relevant=" /covid_vaccine_referral_follow_up/vaccination_details/patient_available  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose" type="select1" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose" readonly="true()" type="string" relevant=" /covid_vaccine_referral_follow_up/referral_details/vaccine_dose  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type" type="select1" relevant="selected(../vaccine_dose, 'yes')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known" type="select1" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/next_visit" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/referral_details/next_visit:jr:constraintMsg')" relevant=" /covid_vaccine_referral_follow_up/referral_details/appointment_date_known  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason" type="select1" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'no'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion1" readonly="true()" type="string" relevant="selected(../no_visit_reason, 'severe_side_effects')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion2" readonly="true()" type="string" relevant="selected(../no_visit_reason, 'vaccine_not_effective')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion3" readonly="true()" type="string" relevant="selected(../no_visit_reason, 'health_facility_far') or selected(../no_visit_reason, 'no_transport') or selected(../no_visit_reason, 'long_queue')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/no_visit_other" type="string" relevant="selected(../no_visit_reason, 'other')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_vaccination" readonly="true()" type="string" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'no'" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_report" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/submit" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_summary_details" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_patient_details" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_findings" readonly="true()" type="string"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_finding_visited" readonly="true()" type="string" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/group_review/r_finding_not_visited" readonly="true()" type="string" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'no'"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
+    </model>
+  </h:head>
+  <h:body class="pages">
+    <group appearance="field-list" ref="/covid_vaccine_referral_follow_up/inputs">
+      <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs:label')"/>
+      <group ref="/covid_vaccine_referral_follow_up/inputs/contact">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs/contact:label')"/>
+        <input appearance="db-object" ref="/covid_vaccine_referral_follow_up/inputs/contact/_id">
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs/contact/_id:label')"/>
+        </input>
+        <group ref="/covid_vaccine_referral_follow_up/inputs/contact/parent">
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs/contact/parent:label')"/>
+          <group ref="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent">
+            <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs/contact/parent/parent:label')"/>
+            <group ref="/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact">
+              <label ref="jr:itext('/covid_vaccine_referral_follow_up/inputs/contact/parent/parent/contact:label')"/>
+            </group>
+          </group>
+        </group>
+      </group>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_referral_follow_up/vaccination_details">
+      <label ref="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details:label')"/>
+      <select1 ref="/covid_vaccine_referral_follow_up/vaccination_details/patient_available">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_available:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_available/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_available/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list" ref="/covid_vaccine_referral_follow_up/referral_details">
+      <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details:label')"/>
+      <select1 ref="/covid_vaccine_referral_follow_up/referral_details/visited_facility">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/visited_facility:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/visited_facility/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/visited_facility/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <select1 ref="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/vaccine_dose:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/vaccine_dose/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/vaccine_dose/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose:label')"/>
+        <hint ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose:hint')"/>
+      </input>
+      <select1 ref="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/astrazenca:label')"/>
+          <value>astrazenca</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/moderna:label')"/>
+          <value>moderna</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/pfizer_biontech:label')"/>
+          <value>pfizer_biontech</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/janssen_vaccine:label')"/>
+          <value>janssen_vaccine</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type/sinopharm:label')"/>
+          <value>sinopharm</value>
+        </item>
+      </select1>
+      <select1 ref="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/appointment_date_known:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/appointment_date_known/yes:label')"/>
+          <value>yes</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/appointment_date_known/no:label')"/>
+          <value>no</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/next_visit">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/next_visit:label')"/>
+      </input>
+      <select1 ref="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason:label')"/>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/severe_side_effects:label')"/>
+          <value>severe_side_effects</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/vaccine_not_effective:label')"/>
+          <value>vaccine_not_effective</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/health_facility_far:label')"/>
+          <value>health_facility_far</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/no_transport:label')"/>
+          <value>no_transport</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/long_queue:label')"/>
+          <value>long_queue</value>
+        </item>
+        <item>
+          <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_reason/other:label')"/>
+          <value>other</value>
+        </item>
+      </select1>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion1">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion1:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion2">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion2:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion3">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion3:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/no_visit_other">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/no_visit_other:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/referral_details/n_encourage_vaccination">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/referral_details/n_encourage_vaccination:label')"/>
+      </input>
+    </group>
+    <group appearance="field-list summary" ref="/covid_vaccine_referral_follow_up/group_review">
+      <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review:label')"/>
+      <input ref="/covid_vaccine_referral_follow_up/group_review/r_report">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_report:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/group_review/submit">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/submit:label')"/>
+      </input>
+      <input appearance="h1 yellow" ref="/covid_vaccine_referral_follow_up/group_review/r_summary_details">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_summary_details:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/group_review/r_patient_details">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_patient_details:label')"/>
+      </input>
+      <input appearance="h1 blue" ref="/covid_vaccine_referral_follow_up/group_review/r_findings">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_findings:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/group_review/r_finding_visited">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_finding_visited:label')"/>
+      </input>
+      <input ref="/covid_vaccine_referral_follow_up/group_review/r_finding_not_visited">
+        <label ref="jr:itext('/covid_vaccine_referral_follow_up/group_review/r_finding_not_visited:label')"/>
+      </input>
+    </group>
+  </h:body>
+</h:html>

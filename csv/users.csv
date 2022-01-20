@@ -1,0 +1,3 @@
+username,password,name,roles,phone,contact.name,place.type,place.name,place.parent
+andra3,Secret_123,chw,Andra Test,+9779841608188,Andra,health_center,Thika Admin's Health Facility 1 edit3,7c4b257f-a69e-4954-805e-af49cf7aa6d5
+bob,Secret_1,chw,bob Example,123456789,bob,health_center,Thika Admin's Health Facility 1 edit3,7c4b257f-a69e-4954-805e-af49cf7aa6d5
