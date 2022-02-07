@@ -222,6 +222,12 @@
           <text id="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick:label">
             <value>None of the COVID-19 vaccines contain the live virus that causes COVID-19, so a COVID-19 vaccine cannot make you sick with COVID-19.</value>
           </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/next_follow_up2:jr:constraintMsg">
+            <value>Date cannot be in the past!</value>
+          </text>
+          <text id="/covid_vaccine_registration/vaccination_details2/next_follow_up2:label">
+            <value>Please indicate the date you would like to come back and follow up with the patient</value>
+          </text>
           <text id="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason/affect_pregnancy:label">
             <value>COVID 19 vaccines might affect my pregnancy</value>
           </text>
@@ -342,7 +348,7 @@
         </translation>
       </itext>
       <instance>
-        <covid_vaccine_registration id="covid_vaccine_registration" prefix="J1!covid_vaccine_registration!" delimiter="#" version="2022-01-11 09:34:42">
+        <covid_vaccine_registration id="covid_vaccine_registration" prefix="J1!covid_vaccine_registration!" delimiter="#" version="2022-02-07 05:18:52">
           <inputs>
             <meta>
               <location>
@@ -432,6 +438,7 @@
             <n_vaccine_refer/>
             <vaccine_follow_up/>
             <get_vaccine2/>
+            <next_follow_up2/>
             <n_vaccine_reach_out/>
           </vaccination_details2>
           <group_review>
@@ -465,7 +472,7 @@
       <bind nodeset="/covid_vaccine_registration/source" type="string" calculate="../inputs/source"/>
       <bind nodeset="/covid_vaccine_registration/source_id" type="string" calculate="../inputs/source_id"/>
       <bind nodeset="/covid_vaccine_registration/patient_uuid" type="string" calculate="../inputs/contact/_id"/>
-      <bind nodeset="/covid_vaccine_registration/patient_id" type="string" calculate="../inputs/contact/_id" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/patient_id" type="string" required="true()" calculate="../inputs/contact/_id"/>
       <bind nodeset="/covid_vaccine_registration/patient_name" type="string" calculate="../inputs/contact/name"/>
       <bind nodeset="/covid_vaccine_registration/patient_date_of_birth" type="string" calculate="../inputs/contact/date_of_birth"/>
       <bind nodeset="/covid_vaccine_registration/patient_age_in_years" type="string" calculate="floor( difference-in-months(  /covid_vaccine_registration/inputs/contact/date_of_birth , today() ) div 12 )"/>
@@ -480,51 +487,52 @@
       <bind nodeset="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_safety" readonly="true()" type="string"/>
       <bind nodeset="/covid_vaccine_registration/vaccine_benefits/n_covid_vaccine_benefits" readonly="true()" type="string"/>
       <bind nodeset="/covid_vaccine_registration/vaccination_details/received_covid_vaccine" type="select1" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details/covid_vaccine_type" type="select1" relevant="selected(../received_covid_vaccine, 'yes')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details/covid_vaccine_type" type="select" required="true()" relevant="selected(../received_covid_vaccine, 'yes')"/>
       <bind nodeset="/covid_vaccine_registration/vaccination_status" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'yes'"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/all_doses_taken" type="select1" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/all_doses_taken" type="select1" required="true()" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'yes'"/>
       <bind nodeset="/covid_vaccine_registration/vaccination_status/n_doses_complete" readonly="true()" type="string" relevant="selected(../all_doses_taken, 'yes')"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason" type="select1" relevant="selected(../all_doses_taken, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/dose_incompletion_reason" type="select1" required="true()" relevant="selected(../all_doses_taken, 'no')"/>
       <bind nodeset="/covid_vaccine_registration/vaccination_status/n_upcoming_appointment" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/appointment_date_known" type="select1" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/next_visit" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'yes'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_status/next_visit:jr:constraintMsg')"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccination_followup" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'no'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_complete_vaccine" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'missed_appointment')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccine_check" readonly="true()" type="string" relevant="selected(../dose_incompletion_reason, 'vaccine_unavailable')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination" type="select1" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'missed_appointment'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason" type="select" relevant="selected(../complete_vaccination, 'no')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'severe_side_effects')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'vaccine_not_effective')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3" readonly="true()" type="string" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_other" type="string" relevant="selected(../non_completion_reason, 'other')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/get_vaccine" type="select1" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue') or selected(../non_completion_reason, 'vaccine_not_effective') or selected(../non_completion_reason, 'severe_side_effects') or selected(../non_completion_reason, 'other')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_reach_out" readonly="true()" type="string" relevant="selected(../get_vaccine, 'no')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_refer" readonly="true()" type="string" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next_follow_up:jr:constraintMsg')"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 14" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'vaccine_unavailable'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:jr:constraintMsg')"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/dose_completion_other" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'" required="true()"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/appointment_date_known" type="select1" required="true()" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/next_visit" type="date" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_status/next_visit:jr:constraintMsg')" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'yes'" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccination_followup" readonly="true()" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/appointment_date_known  = 'no'"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_complete_vaccine" readonly="true()" type="string" required="true()" relevant="selected(../dose_incompletion_reason, 'missed_appointment')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_status/n_vaccine_check" readonly="true()" type="string" required="true()" relevant="selected(../dose_incompletion_reason, 'vaccine_unavailable')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/complete_vaccination" type="select1" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'missed_appointment'"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_reason" type="select" required="true()" relevant="selected(../complete_vaccination, 'no')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion1" readonly="true()" type="string" required="true()" relevant="selected(../non_completion_reason, 'severe_side_effects')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion2" readonly="true()" type="string" required="true()" relevant="selected(../non_completion_reason, 'vaccine_not_effective')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_encourage_completion3" readonly="true()" type="string" required="true()" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/non_completion_other" type="string" required="true()" relevant="selected(../non_completion_reason, 'other')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/get_vaccine" type="select1" required="true()" relevant="selected(../non_completion_reason, 'health_facility_far') or selected(../non_completion_reason, 'no_transport') or selected(../non_completion_reason, 'long_queue') or selected(../non_completion_reason, 'vaccine_not_effective') or selected(../non_completion_reason, 'severe_side_effects') or selected(../non_completion_reason, 'other')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_reach_out" readonly="true()" type="string" required="true()" relevant="selected(../get_vaccine, 'no')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_refer" readonly="true()" type="string" required="true()" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next_follow_up" type="date" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next_follow_up:jr:constraintMsg')" required="true()" relevant="selected(../get_vaccine, 'yes') or selected(../complete_vaccination, 'yes')" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up" type="date" jr:constraintMsg="jr:itext('/covid_vaccine_registration/missed_vaccine_details/next__vacchine_follow_up:jr:constraintMsg')" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'vaccine_unavailable'" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 14"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/dose_completion_other" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion" readonly="true()" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'"/>
+      <bind nodeset="/covid_vaccine_registration/missed_vaccine_details/n_dose_completion_encourage" readonly="true()" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_status/dose_incompletion_reason  = 'other'"/>
       <bind nodeset="/covid_vaccine_registration/vaccination_details2" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'no'"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/receive_vaccine" type="select1" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'no'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason" type="select" relevant="selected(../receive_vaccine, 'no')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'infertility')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'severe_side_effects')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'affect_pregnancy')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'breast_feeding')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective" readonly="true()" type="string" relevant="selected(../non_vaccination_reason, 'not_effective')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other" type="string" relevant="selected(../non_vaccination_reason, 'other')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_refer" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'" required="true()" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:jr:constraintMsg')"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/get_vaccine2" type="select1" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19') or 
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/receive_vaccine" type="select1" required="true()" relevant=" /covid_vaccine_registration/vaccination_details/received_covid_vaccine  = 'no'"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason" type="select" required="true()" relevant="selected(../receive_vaccine, 'no')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_wont_make_you_sick" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_infertitlity" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'infertility')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_side_effects" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'severe_side_effects')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_pregnancy" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'affect_pregnancy')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_breastfeeding" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'breast_feeding')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_not_effective" readonly="true()" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'not_effective')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/non_vaccination_reason_other" type="string" required="true()" relevant="selected(../non_vaccination_reason, 'other')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_refer" readonly="true()" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/vaccine_follow_up" type="date" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_details2/vaccine_follow_up:jr:constraintMsg')" required="true()" relevant=" /covid_vaccine_registration/vaccination_details2/receive_vaccine  = 'yes'" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/get_vaccine2" type="select1" required="true()" relevant="selected(../non_vaccination_reason, 'scared_to_get_covid19') or 
 selected(../non_vaccination_reason, 'infertility') or 
 selected(../non_vaccination_reason, 'severe_side_effects') or 
 selected(../non_vaccination_reason, 'affect_pregnancy') or 
 selected(../non_vaccination_reason, 'breast_feeding') or 
 selected(../non_vaccination_reason, 'not_effective') or 
-selected(../non_vaccination_reason, 'other')" required="true()"/>
-      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out" readonly="true()" type="string" relevant=" /covid_vaccine_registration/vaccination_details2/get_vaccine2  = 'no'" required="true()"/>
+selected(../non_vaccination_reason, 'other')"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/next_follow_up2" type="date" jr:constraintMsg="jr:itext('/covid_vaccine_registration/vaccination_details2/next_follow_up2:jr:constraintMsg')" required="true()" relevant="selected(../get_vaccine2, 'yes')" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())"/>
+      <bind nodeset="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out" readonly="true()" type="string" required="true()" relevant=" /covid_vaccine_registration/vaccination_details2/get_vaccine2  = 'no'"/>
       <bind nodeset="/covid_vaccine_registration/group_review/r_report" readonly="true()" type="string"/>
       <bind nodeset="/covid_vaccine_registration/group_review/submit" readonly="true()" type="string"/>
       <bind nodeset="/covid_vaccine_registration/group_review/r_summary_details" readonly="true()" type="string"/>
@@ -582,7 +590,7 @@ selected(../non_vaccination_reason, 'other')" required="true()"/>
           <value>no</value>
         </item>
       </select1>
-      <select1 ref="/covid_vaccine_registration/vaccination_details/covid_vaccine_type">
+      <select ref="/covid_vaccine_registration/vaccination_details/covid_vaccine_type">
         <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type:label')"/>
         <item>
           <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/astrazenca:label')"/>
@@ -604,7 +612,7 @@ selected(../non_vaccination_reason, 'other')" required="true()"/>
           <label ref="jr:itext('/covid_vaccine_registration/vaccination_details/covid_vaccine_type/sinopharm:label')"/>
           <value>sinopharm</value>
         </item>
-      </select1>
+      </select>
     </group>
     <group appearance="field-list" ref="/covid_vaccine_registration/vaccination_status">
       <label ref="jr:itext('/covid_vaccine_registration/vaccination_status:label')"/>
@@ -835,6 +843,9 @@ selected(../non_vaccination_reason, 'other')" required="true()"/>
           <value>no</value>
         </item>
       </select1>
+      <input ref="/covid_vaccine_registration/vaccination_details2/next_follow_up2">
+        <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/next_follow_up2:label')"/>
+      </input>
       <input ref="/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out">
         <label ref="jr:itext('/covid_vaccine_registration/vaccination_details2/n_vaccine_reach_out:label')"/>
       </input>

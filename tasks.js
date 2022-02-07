@@ -346,7 +346,7 @@ module.exports = [
     appliesTo: 'reports',
     appliesToType: ['covid_vaccine_registration'],
     appliesIf: function (contact, report) {
-      return getField(report, 'vaccination_status.appointment_date_known') === 'yes' && isAlive(contact);
+      return isAlive(contact) && (getField(report, 'vaccination_status.appointment_date_known') === 'yes' || getField(report, 'vaccination_details2.get_vaccine2') === 'yes') ;
     },
     resolvedIf: function (contact, report, event, dueDate) {
       const startTime = Math.max(addDays(dueDate, -event.start).getTime(), report.reported_date + 1);

@@ -283,7 +283,7 @@
       <bind nodeset="/covid_vaccine_referral_follow_up/source_id" type="string" calculate="../inputs/source_id"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/is_covid_vaccine_referral" type="string" calculate="../inputs/is_covid_vaccine_referral"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/patient_uuid" type="string" calculate="../inputs/contact/_id"/>
-      <bind nodeset="/covid_vaccine_referral_follow_up/patient_id" type="string" calculate="../inputs/contact/_id" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/patient_id" type="string" required="true()" calculate="../inputs/contact/_id"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/patient_name" type="string" calculate="../inputs/contact/name"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/patient_date_of_birth" type="string" calculate="../inputs/contact/date_of_birth"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/patient_age_in_years" type="string" calculate="floor( difference-in-months(  /covid_vaccine_referral_follow_up/inputs/contact/date_of_birth , today() ) div 12 )"/>
@@ -295,14 +295,14 @@
 'yes', 'no')"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/t_death_confirmation_date" type="string" calculate="today()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/vaccination_details/patient_available" type="select1" required="true()"/>
-      <bind nodeset="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 7" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:jr:constraintMsg')" relevant="selected(../patient_available, 'no')" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today()) and decimal-date-time(.) &lt;= decimal-date-time(today()) + 7" relevant="selected(../patient_available, 'no')" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/vaccination_details/patient_availability_follow_up:jr:constraintMsg')" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details" relevant=" /covid_vaccine_referral_follow_up/vaccination_details/patient_available  = 'yes'"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/visited_facility" type="select1" relevant=" /covid_vaccine_referral_follow_up/vaccination_details/patient_available  = 'yes'" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/vaccine_dose" type="select1" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'yes'" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_vaccine_dose" readonly="true()" type="string" relevant=" /covid_vaccine_referral_follow_up/referral_details/vaccine_dose  = 'yes'"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/covid_vaccine_type" type="select1" relevant="selected(../vaccine_dose, 'yes')" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/appointment_date_known" type="select1" relevant="selected(../dose_incompletion_reason, 'upcoming_appointment')" required="true()"/>
-      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/next_visit" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/referral_details/next_visit:jr:constraintMsg')" relevant=" /covid_vaccine_referral_follow_up/referral_details/appointment_date_known  = 'yes'" required="true()"/>
+      <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/next_visit" type="date" constraint="decimal-date-time(.) &gt;= decimal-date-time(today())" relevant=" /covid_vaccine_referral_follow_up/referral_details/appointment_date_known  = 'yes'" jr:constraintMsg="jr:itext('/covid_vaccine_referral_follow_up/referral_details/next_visit:jr:constraintMsg')" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/no_visit_reason" type="select1" relevant=" /covid_vaccine_referral_follow_up/referral_details/visited_facility  = 'no'"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion1" readonly="true()" type="string" relevant="selected(../no_visit_reason, 'severe_side_effects')" required="true()"/>
       <bind nodeset="/covid_vaccine_referral_follow_up/referral_details/n_encourage_completion2" readonly="true()" type="string" relevant="selected(../no_visit_reason, 'vaccine_not_effective')" required="true()"/>
